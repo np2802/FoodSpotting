@@ -1,0 +1,295 @@
+/* CSS reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS Variables */
+:root {
+  --navbar-height: 59px;
+}
+
+span::before {
+  content: "want to rewiew restaurants?";
+  animation: animate infinite 8s;
+  padding-left: 10px;
+  font-size: 5rem;
+  color: rgba(0, 0, 0, 0.338);
+}
+
+@keyframes animate {
+
+  0% {
+      content: "Welcome to XYZ";
+  }
+
+  50% {
+      content: "are you hungry?";
+  }
+
+  75% {
+      content: "want to go out for dinner?";
+  }
+}
+
+/* Navigation Bar */
+#navbar {
+  display: flex;
+  position: sticky;
+  top: 0px;
+  align-items: right;
+}
+
+#navbar::before {
+  content: "";
+  background-color: black;
+  position: absolute;
+  height: 90%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+/* Navigation Bar: Logo and Image */
+#logo {
+  margin: 10px 20px;
+}
+
+#logo img {
+  height: 56px;
+  margin: 6px 8px;
+}
+/* Navigation Bar: List Styling */
+#navbar ul {
+  padding: 10px;
+  display: flex;
+  font-family: "Baloo Bhai 2", cursive;
+}
+
+#navbar ul li {
+  list-style: none;
+  font-size: 1.3rem;
+}
+
+#navbar ul li a {
+  color: white;
+  display: block;
+  padding: 9px 40px;
+  border-radius: 20px;
+  text-align: right;
+  text-decoration: none;
+}
+
+#navbar ul li a:hover {
+  color: black;
+  background-color: white;
+}
+
+/* Home Section */
+
+#home {
+  display: flex;
+  flex-direction: column;
+  padding: 3px 200px;
+  height: 500px;
+  justify-content: center;
+  align-items: center;
+}
+
+#home::before {
+  content: "";
+  position: absolute;
+  background: url('https://images.unsplash.com/photo-1505935428862-770b6f24f629?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2067&q=80');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  opacity: 0.89;
+}
+
+#home h1 {
+  color: rgba(0, 0, 0, 0.338);
+  text-align: center;
+  font-family: "Bree Serif", serif;
+}
+
+#home p {
+  color: rgba(0, 0, 0, 0.338);
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: "Bree Serif", serif;
+}
+/* Services Section */
+#services {
+  margin: 12px;
+  display: flex;
+}
+
+#services .box {
+  border: 2px solid brown;
+  padding: 30px;
+  margin: 3px 6px;
+  border-radius: 23px;
+  background-color: #eaeaea;
+}
+
+#services .box img {
+  height: 80px;
+  margin: auto;
+  display: block;
+}
+
+#services .box p {
+  font-family: "Bree Serif", serif;
+}
+/* Partners Section */
+#partners-section {
+  position: relative;
+}
+
+#partners-section::before {
+  content: "";
+  position: absolute;
+  background: url('https://thatsuman.github.io/web-dev-projects/SafeMeal/assets/pizza_2.jpg');
+  width: 100%;
+  height: 294px;
+  z-index: -1;
+  opacity: 0.4;
+}
+#our-partners {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.partners-logo {
+  margin: 10px 34px;
+}
+
+.partners-logo img {
+  height: 124px;
+}
+
+.h-partners {
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: black;
+  padding: 12px;
+  font-family: "Bree Serif", serif;
+}
+#foodpanda {
+  justify-content: center;
+  height: 131px;
+  width: 85px;
+  display: flex;
+  position: relative;
+  padding-left: 25px;
+}
+/* Contact Section */
+#contact {
+  position: relative;
+  /* padding-top: 56px; */
+}
+
+#contact::before {
+  content: "";
+  position: absolute;
+  background: url('https://images.unsplash.com/photo-1417733403748-83bbc7c05140?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fGNvbnRhY3QlMjB1c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  opacity: 0.89;
+}
+
+#contact-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 34px;
+}
+
+#contact-box input, #contact-box textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 9px;
+  font-size: 1.1rem;
+}
+
+#contact-box form {
+  width: 40%;
+}
+
+#contact-box label {
+  font-size: 1.3rem;
+  font-family: "Bree Serif", serif;
+}
+
+
+
+/* Footer */
+footer {
+  background-color: black;
+  color: white;
+  padding: 9px 20px;
+}
+
+/* Utility Classes */
+.h-primary {
+  font-size: 3.8rem;
+  padding: 12px;
+  font-family: "Bree Serif", serif;
+}
+
+.h-primary-services {
+  font-size: 3.5rem;
+  font-weight: 300;
+  padding: 20px;
+  font-family: "Bree Serif", serif;
+}
+
+.h-secondary {
+  font-size: 2.8rem;
+  font-weight: 400;
+  padding: 12px;
+  font-family: "Bree Serif", serif;
+}
+
+.btn {
+  padding: 6px 20px;
+  margin: 17px;
+  border: 2px solid white;
+  background-color: #c9184a;
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: black;
+  background-color: rgba(0, 0, 0, 0.338);
+}
+
+.center {
+  text-align: center;
+}
+
+.service-font {
+  font-size: 1.5rem;
+}
+
+.login {
+  display: flex;
+
+}
