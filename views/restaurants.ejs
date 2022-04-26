@@ -1,0 +1,20 @@
+<%- include("partials/header") %>
+    
+    <div class="container">
+        <div class="row mt-2">
+        <% restaurants.forEach((restaurant)=> { %>
+            <div class="card m-3">
+                <a href="/restaurants/<%= restaurant._id %>">
+                <img src="<%= restaurant.image %>" alt="Picture here" class="card-img card-img-top">
+                </a>
+                <h3 class="card-title mt-3">
+                    <%= restaurant.title %>
+                </h3>
+                <p class="card-text mb-3 mx-3">
+                    <%= restaurant.description %>
+                </p>
+            </div>
+        <% }) %>
+        </div>
+    </div>
+<%- include("partials/footer") %>

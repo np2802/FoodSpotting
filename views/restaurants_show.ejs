@@ -1,0 +1,61 @@
+<%- include("partials/header") %>
+
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-6 show_image-container">
+                <img src="<%= restaurant.image %>" alt="">
+            </div>
+            <div class="col-6 show_details-container">
+                <h1>
+                    <%= restaurant.title %>
+                </h1>
+                <p>
+                    <%= restaurant.description %>
+                </p>
+
+                <table class="table">
+
+                    <tbody>
+                        <tr>
+                            <th scope="row">Starting Date</th>
+                            <td><%= restaurant.date %></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Cuisine</th>
+                            <td><%= restaurant.cuisine %></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Famous Dishes</th>
+                            <td><%= restaurant.fdish %></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Opening Time</th>
+                            <td><%= restaurant.otime %></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Closing Time</th>
+                            <td><%= restaurant.ctime %></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Delivery?</th>
+                            <td><%= restaurant.delivery %></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <div class="row show_comment-header mt-3">
+            COMMENT HEADER
+        </div>
+        <div class="row show_comment-container py-2">
+            <div class="col-3">
+                Username
+            </div>
+            <div class="col-9">
+                Comment Text Here
+            </div>
+        </div>
+    </div>
+
+    <%- include("partials/footer") %>

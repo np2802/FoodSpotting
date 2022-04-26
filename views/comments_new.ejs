@@ -1,0 +1,34 @@
+<%- include("partials/header") %>
+
+<div class="container">
+  <h1>Add New Comment</h1>
+  <form action="/restaurants/<%= restaurantId %>/comment" method="POST">
+    <div class="form-group">
+      <label for="user">Username</label>
+      <input
+        type="text"
+        name="user"
+        id="user"
+        class="form-control"
+        placeholder="username"
+        required
+        autofocus
+      />
+    </div>
+    <div class="form-group">
+      <label for="text">Comment Text</label>
+      <textarea
+        class="form-control"
+        name="text"
+        id="text"
+        cols="80"
+        rows="8"
+        placeholder="Comment text here"
+        required
+      ></textarea>
+    </div>
+    <input type="hidden" name="restaurantId" value="<%= restaurantId %>" />
+    <button type="btn btn-primary">Submit</button>
+  </form>
+</div>
+<%- include("partials/footer") %>
