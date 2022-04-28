@@ -1,4 +1,5 @@
 const express = require("express");
+var morgan = require("morgan");
 const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -13,6 +14,11 @@ const Comment = require("./models/comment");
 const mainRoutes = require("./routes/main");
 const restaurantRoutes = require("./routes/restaurants");
 const commentRoutes = require("./routes/comments");
+
+app.use(morgan("tiny"));
+
+const seed = require(`./utils/seed`);
+seed();
 
 mongoose.connect(config.db.connection, {
   useNewUrlParser: true,

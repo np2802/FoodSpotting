@@ -35,7 +35,7 @@ router.post("/", (req, res) => {
   Resto.create(newResto)
     .then((restaurant) => {
       console.log(restaurant);
-      res.redirect("/restaurants");
+      res.redirect(`/restaurants` + newResto._id);
     })
     .catch((err) => {
       console.log(err);
@@ -76,7 +76,7 @@ router.get("/:id/edit", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
-  const newResto = {
+  const resto = {
     title: req.body.title,
     description: req.body.description,
     date: req.body.date,
@@ -88,11 +88,26 @@ router.put("/:id", (req, res) => {
     image: req.body.image,
   };
 
-  Resto.findByIdAndUpdate(req.params.id, restaurant, { new: true })
+  Resto.findByIdAndUpdate(req.params.id, resto, { new: true })
     .exec()
     .then((updatedRestaurant) => {
       console.log(updatedRestaurant);
       res.redirect(`/restaurants/${req.params.id}`);
+    })
+    .catch((err) => {
+      res.send("Error:", err);
+    });
+});
+
+router.delete(`/:id`, (req, res) => {
+  Resto.findByIdAndDelete(req.params.id)
+    .exec()
+    .then((deletedRestaurant) => {
+      console.log("Deleted :", deletedRestaurant);
+      res.redirect(`/restaurants`);
+    })
+    .catch((err) => {
+      res.send("Error Deleting : ", err);
     });
 });
 

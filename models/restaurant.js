@@ -8,7 +8,7 @@ const restoSchema = new mongoose.Schema({
   ctime: String,
   delivery: Boolean,
   fdish: String,
-  image: String,
+  image_link: String,
 });
 
 module.exports = mongoose.model("restaurant", restoSchema);
