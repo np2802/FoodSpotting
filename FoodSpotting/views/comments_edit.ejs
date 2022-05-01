@@ -1,0 +1,15 @@
+<%- include("partials/header") %>
+
+    <div class="container">
+        <h1>Add New Review</h1>
+        <form action="/restaurants/<%= restaurant._id %>/comment/<%= comment._id %>?_method=PUT" method="POST">
+            <div class="form-group">
+                <label for="text">Type your Review Here</label>
+                <textarea class="form-control" name="text" id="text" cols="80" rows="8" placeholder="Review text here"
+                    required><%= comment.text %></textarea>
+            </div>
+            <br>
+            <button type="btn btn-primary">Submit Edited Review</button>
+        </form>
+    </div>
+    <%- include("partials/footer") %>

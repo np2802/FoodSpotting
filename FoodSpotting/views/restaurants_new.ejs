@@ -1,0 +1,59 @@
+<%- include("partials/header") %>
+    <!-- <h1>Add new restaurant</h1> -->
+    <div class="container">
+        <h1>Add New Restaurant</h1>
+        <form action="/restaurants" method="POST">
+            <div class="mb-3">
+                <label for="title" class="form-label">Restaurant Name</label>
+                <input type="text" class="form-control" name="title" placeholder="Restaurant Name Here" autofocus>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Address</label>
+                <input type="text" class="form-control" name="description" placeholder="Address of hotel">
+            </div>
+            <div class="mb-3">
+                <label for="cuisine" class="form-label">Cuisine</label>
+                <input type="text" class="form-control" name="cuisine" placeholder="e.g. Indian, Chinese">
+            </div>
+            <div class="mb-3">
+                <label for="otime" class="form-label">Opening Time</label>
+                <input type="time" class="form-control" name="otime" placeholder="e.g. 9.00am">
+            </div>
+            <div class="mb-3">
+                <label for="ctime" class="form-label">Closing Time</label>
+                <input type="time" class="form-control" name="ctime" placeholder="e.g. 9.00pm">
+            </div>
+            <div class="mb-3">
+                <label for="date" class="form-label">Date when restaurant is Started?</label>
+                <input type="date" class="form-control" name="date" placeholder="Enter the Date when restaurant is Started">
+            </div>
+            <div class="mb-3">
+                <label for="fdish" class="form-label">Famous Dishes</label>
+                <input type="text" class="form-control" name="fdish" placeholder="e.g. Pizza, Burger">
+            </div>
+            <div class="mb-3">
+                <input type="checkbox" class="form-check-input" name="delivery">
+                <label for="delivery" class="form-label">Delivery?</label>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Link to Image</label>
+                <input type="text" class="form-control" name="image_link" placeholder="https://www.myimage.com">
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <!-- <form action="/restaurants" method="POST">
+    <label for="title">Restaurant name</label>
+    <input type="text" name="title" autofocus>
+    <label for="description">Description</label>
+    <input type="text" name="description">
+    <label for="image">Image Link</label>
+    <input type="text" name="image">
+    <br />
+    <br />
+    <button type="submit">Submit</button>
+</form> -->
+
+    <%- include("partials/footer") %>

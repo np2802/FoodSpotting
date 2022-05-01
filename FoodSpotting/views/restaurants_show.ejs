@@ -1,0 +1,73 @@
+<%- include("partials/header") %>
+
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-6 show_image-container">
+      <img src="<%= restaurant.image_link %>" alt="Image" />
+    </div>
+    <div class="col-6 show_details-container">
+      <h1><%= restaurant.title %></h1>
+      <p><%= restaurant.description %></p>
+
+      <table class="table">
+        <tbody>
+          <tr>
+            <th scope="row">Starting Date</th>
+            <td><%= restaurant.date %></td>
+          </tr>
+          <tr>
+            <th scope="row">Cuisine</th>
+            <td><%= restaurant.cuisine %></td>
+          </tr>
+          <tr>
+            <th scope="row">Famous Dishes</th>
+            <td><%= restaurant.fdish %></td>
+          </tr>
+          <tr>
+            <th scope="row">Opening Time</th>
+            <td><%= restaurant.otime %></td>
+          </tr>
+          <tr>
+            <th scope="row">Closing Time</th>
+            <td><%= restaurant.ctime %></td>
+          </tr>
+          <tr>
+            <th scope="row">Delivery?</th>
+            <td><%= restaurant.delivery %></td>
+          </tr>
+        </tbody>
+      </table>
+      <% if (user && user.username === restaurant.owner.username) { %>
+      <a href="/restaurants/<%= restaurant._id %>/edit">
+        <button class="btn btn-outline-info btn-lg btn-block mb-2 col-12">Edit</button>
+      </a>
+      <form action="/restaurants/<%= restaurant._id %>?_method=DELETE" method="POST">
+        <button type="submit" class="btn btn-outline-danger btn-lg btn-block col-12">Delete</button>
+      </form>
+      <% } %>
+    </div>
+  </div>
+  <div class="row show_comment-header mt-3">REVIEWS</div>
+
+  <a href="/restaurants/<%= restaurant._id %>/comment/new">
+    <button class="btn btn-success btn-lg mb-4 mt-3">Add a Review</button>
+  </a>
+
+  <% comments.forEach((comment => { %>
+  <div class="row show_comment-container py-2 border">
+    <div class="col-2 my-auto "><%= comment.user.username %></div>
+    <div class="col-2 border-right my-auto d-flex flex-wrap justify-content-center ">
+      <% if (user && user.username === comment.user.username) { %>
+      <a href="/restaurants/<%= restaurant._id %>/comment/<%= comment._id %>/edit" class="btn btn-sm btn-success w-75 p-0 my-1">Edit</a>
+      <form action="/restaurants/<%= restaurant._id %>/comment/<%= comment._id %>?_method=DELETE" class="w-75 my-1" method="POST">
+        <button class="btn btn-sm btn-danger w-100 p-0">Delete</button>
+      </form>
+      <% } %>
+    </div>
+    <div class="col-8 my-auto"><%= comment.text %></div>
+  </div>
+  <%}))%>
+  <div class="py-5"></div>
+</div>
+
+<%- include("partials/footer") %>

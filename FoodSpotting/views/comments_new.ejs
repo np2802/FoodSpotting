@@ -1,0 +1,35 @@
+<%- include("partials/header") %>
+
+<div class="container">
+  <h1>Add New Review</h1>
+  <form action="/restaurants/<%= restaurantId %>/comment" method="POST">
+    <!-- <div class="form-group">
+      <label for="user">Username</label>
+      <input
+        type="text"
+        name="user"
+        id="user"
+        class="form-control"
+        placeholder="username"
+        required
+        autofocus
+      />
+    </div> -->
+    <div class="form-group">
+      <label for="text">Type Your Review Here</label>
+      <textarea
+        class="form-control"
+        name="text"
+        id="text"
+        cols="80"
+        rows="8"
+        placeholder=" e.g. Nice restaurant!!"
+        required
+      ></textarea>
+    </div>
+    <br>
+    <input type="hidden" name="restaurantId" value="<%= restaurantId %>" />
+    <button type="btn btn-primary">Submit Review</button>
+  </form>
+</div>
+<%- include("partials/footer") %>

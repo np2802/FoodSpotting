@@ -1,0 +1,59 @@
+<%- include("partials/header") %>
+  <!-- <h1>Add new restaurant</h1> -->
+  <div class="container">
+    <h1>Edit Restaurant</h1>
+    <form action="/restaurants/<%=restaurant._id %>?_method=PUT" method="POST">
+      <div class="form-group">
+        <label for="title">Restaurant Name</label>
+        <input type="text" class="form-control" name="title" value="<%= restaurant.title %>">
+      </div>
+      <div class="form-group">
+        <label for="description">Address</label>
+        <input type="text" class="form-control" name="description" value="<%=restaurant.description %>">
+      </div>
+      <div class="form-group">
+        <label for="cuisine">Cuisine</label>
+        <input type="text" class="form-control" name="cuisine" value="<%=restaurant.cuisine %>">
+      </div>
+      <div class="form-group">
+        <label for="otime">Opening Time</label>
+        <input type="time" class="form-control" name="otime" value="<%=restaurant.otime %>">
+      </div>
+      <div class="form-group">
+        <label for="ctime">Closing Time</label>
+        <input type="time" class="form-control" name="ctime" value="<%=restaurant.ctime %>">
+      </div>
+      <div class="form-group">
+        <label for="date">Date when restaurant is Started?</label>
+        <input type="date" class="form-control" name="date" value="<%=restaurant.date.toISOString().split('T')[0] %>">
+      </div>
+      <div class="form-group">
+        <label for="fdish">Famous Dishes</label>
+        <input type="text" class="form-control" name="fdish" value="<%=restaurant.fdish %>">
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" name="delivery" <%=restaurant.delivery ? 'checked' : '' %>>
+        <label for="delivery">Delivery?</label>
+      </div>
+      <div class="form-group">
+        <label for="image">Link to Image</label>
+        <input type="text" class="form-control" name="image_link" value="<%=restaurant.image_link %>">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+  <!-- <form action="/restaurants" method="POST">
+    <label for="title">Restaurant name</label>
+    <input type="text" name="title" autofocus>
+    <label for="description">Description</label>
+    <input type="text" name="description">
+    <label for="image">Image Link</label>
+    <input type="text" name="image">
+    <br />
+    <br />
+    <button type="submit">Submit</button>
+</form> -->
+
+  <%- include("partials/footer") %>

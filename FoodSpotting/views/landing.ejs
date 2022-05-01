@@ -1,0 +1,681 @@
+<head>
+    <!-- <link rel="stylesheet" href="./homepage.css" /> -->
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: cursive;
+            margin: 0px;
+            font-family: 'segoe ui';
+        }
+
+        title {
+            font-family: cursive;
+        }
+
+        .nav {
+            height: 50px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7) url(https://img.freepik.com/free-psd/flat-lay-fast-food-wooden-table-mock-up_23-2148321335.jpg?size=626&ext=jpg&ga=GA1.2.174179624.1651215702);
+            background-size: cover;
+            background-blend-mode: soft-light;
+            position: sticky;
+        }
+
+        .nav>.nav-header {
+            display: inline;
+        }
+
+        .nav>.nav-header>.nav-title {
+            display: inline-block;
+            font-size: 22px;
+            color: black;
+            padding: 10px 10px 10px 10px;
+        }
+
+        .nav>.nav-btn {
+            display: none;
+        }
+
+        .nav>.nav-links {
+            display: inline;
+            float: right;
+            font-size: 18px;
+        }
+
+        .nav>.nav-links>a {
+            display: inline-block;
+            padding: 5px 10px 5px 10px;
+            text-decoration: none;
+            color: #efefef;
+        }
+
+        .nav>.nav-links>a:hover {
+            background-color: rgba(203, 140, 84, 0.582);
+        }
+
+        .nav>#nav-check {
+            display: none;
+        }
+
+        @media (max-width:600px) {
+            .nav>.nav-btn {
+                display: inline-block;
+                position: absolute;
+                right: 0px;
+                top: 0px;
+            }
+
+            .nav>.nav-btn>label {
+                display: inline-block;
+                width: 50px;
+                height: 50px;
+                padding: 13px;
+            }
+
+            .nav>.nav-btn>label:hover,
+            .nav #nav-check:checked~.nav-btn>label {
+                background-color: rgba(203, 140, 84, 0.582);
+            }
+
+            .nav>.nav-btn>label>span {
+                display: block;
+                width: 25px;
+                height: 10px;
+                border-top: 2px solid #eee;
+            }
+
+            .nav>.nav-links {
+                position: absolute;
+                display: block;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.7) url(https://img.freepik.com/free-psd/flat-lay-fast-food-wooden-table-mock-up_23-2148321335.jpg?size=626&ext=jpg&ga=GA1.2.174179624.1651215702);
+                background-size: cover;
+                background-blend-mode: color-burn;
+                height: 0px;
+                transition: all 0.3s ease-in;
+                overflow-y: hidden;
+                top: 50px;
+                left: 0px;
+            }
+
+            .nav>.nav-links>a {
+                display: block;
+                width: 100%;
+            }
+
+            .nav>#nav-check:not(:checked)~.nav-links {
+                height: 0px;
+            }
+
+            .nav>#nav-check:checked~.nav-links {
+                height: auto;
+                overflow-y: auto;
+            }
+        }
+
+        .logo {
+            width: 20%;
+            height: 20%;
+            display: flex;
+            /* padding: 10px; */
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .logo img {
+            width: 26%;
+            border: 3px solid white;
+            border-radius: 50px;
+            margin: 5px;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            position: sticky;
+            top: 0;
+        }
+
+        /* .nav-list {
+  width: 70%;
+  display: flex;
+  align-items: left;
+}
+
+.nav-list li {
+  list-style: none;
+  padding: 26px 30px;
+  cursor: pointer;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: white;
+  /* font-size: 17px; */
+        /* }
+
+.nav-list li a:hover {
+  text-decoration: none;
+  color: white;
+} 
+
+.rightNav {
+  width: 30%;
+  text-align: right;
+}
+
+#search {
+  padding: 5px;
+  font-size: 17px;
+  border: 2px solid grey;
+  border-radius: 9px;
+} */
+
+        .background {
+            background: rgba(0, 0, 0, 0.7) url(https://img.freepik.com/free-psd/flat-lay-fast-food-wooden-table-mock-up_23-2148321335.jpg?size=626&ext=jpg&ga=GA1.2.174179624.1651215702);
+            background-size: cover;
+            background-blend-mode: soft-light;
+
+        }
+
+        .firstsection {
+            height: 100vh;
+        }
+
+        .box-main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            max-width: 65%;
+            margin: auto;
+            height: 80%;
+        }
+
+        .firstHalf {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .secondHalf {
+            width: 20%;
+            padding-left: 30px;
+            text-align: center;
+        }
+
+        .secondHalf img {
+            width: 150%;
+            height: 20%;
+            border: 4px solid white;
+            border-radius: 100px;
+            display: block;
+            margin: auto;
+            text-align: center;
+        }
+
+        .text-big {
+            font-size: 55px;
+            text-align: center;
+        }
+
+        .text-small {
+            font-size: 27px;
+            text-align: center;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            margin: 7px 3px;
+            border: 2px solid white;
+            border-radius: 8px;
+            font-size: 20px;
+            background: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        .btn-sm {
+            padding: 6px 10px;
+            vertical-align: middle;
+            font-size: 16px;
+        }
+
+        .btn-dark {
+            color: black;
+            border: 2px solid grey;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            max-width: 80%;
+            margin: auto;
+            font-family: "Dancing Script", cursive;
+        }
+
+        .section-left {
+            flex-direction: row-reverse;
+        }
+
+        .thumbnail {
+            width: 45%;
+        }
+
+        .para {
+            padding: 0px 65px;
+        }
+
+        .sectiontagSubTag {
+            font-family: "Dancing Script", cursive;
+            padding-bottom: 10px;
+        }
+
+        .thumbnail img {
+            width: 250px;
+            border: 2px solid black;
+            border-radius: 26px;
+            margin: 19px;
+            left: 50%;
+            right: 50%;
+        }
+
+        .contact {
+            background-color: #ebe3e3;
+            height: 633px;
+        }
+
+        .text-center {
+            text-align: center;
+            padding-top: 30px;
+            font-size: 35px;
+        }
+
+        .form {
+            max-width: 1200px;
+            margin: 25px auto;
+        }
+
+        .form-input {
+            margin: 14px 0;
+            padding: 5px 3px;
+            width: 100%;
+            font-size: 19px;
+            border: 2px solid white;
+            border-radius: 6px;
+            font-family: "Dancing Script", cursive;
+        }
+
+        #feedback-area {
+            margin: 14px 0;
+            padding: 5px 3px;
+            width: 100%;
+            font-size: 19px;
+            border: 2px solid white;
+            border-radius: 6px;
+            font-family: "Dancing Script", cursive;
+        }
+
+        .text-footer {
+            text-align: center;
+            padding: 30px 0;
+            display: flex;
+            justify-content: center;
+            color: white;
+            font-size: 23px;
+        }
+
+        /* .burger {
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  right: 5%;
+  top: 15px;
+}
+
+.line {
+  width: 33px;
+  background-color: white;
+  height: 4px;
+  margin: 5px 3px;
+} */
+
+        @media only screen and (max-width: 1140px) {
+
+            .secondHalf img {
+                width: 80%;
+                height: 40%;
+            }
+
+            .text-big {
+                font-size: 50px;
+            }
+
+            .text-footer {
+                font-size: 20px;
+                padding: 15px 0;
+            }
+
+            /* .nav-list {
+    flex-direction: column;
+  } */
+
+            .navbar {
+                flex-direction: column;
+                transition: all 0.9s ease-out;
+                height: 447px;
+            }
+
+            /* .rightNav {
+    text-align: center;
+  } */
+
+            .box-main {
+                flex-direction: column-reverse;
+                max-width: 100%;
+            }
+
+            /* #search {
+    width: 100%;
+  }
+
+  .burger {
+    display: block;
+  } */
+
+            .h-nav-resp {
+                height: 65px;
+            }
+
+            /* .v-class-resp {
+    opacity: 0;
+  } */
+
+            .section {
+                flex-direction: column-reverse;
+            }
+
+            .text-big {
+                text-align: center;
+            }
+
+            .text-small {
+                text-align: center;
+                margin-bottom: 5px;
+            }
+
+            .buttons {
+                text-align: center;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .paras {
+                padding: 0px 0px;
+            }
+        }
+    </style>
+    <!-- <script src="./homepage.js"></script> -->
+    <script>
+        function formValidation() {
+            var uname = document.registration.username;
+            var uemail = document.registration.email;
+            var message = document.registration.contactUs;
+            if (allLetter(uname)) {
+                if (ValidateEmail(uemail)) {
+                    if (ValidateMessage(message)) {
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        function allLetter(uname) {
+            var letters = /^[A-Za-z]+$/;
+
+            var name_len = uname.value.length;
+            if (name_len == 0) {
+                alert("Name should not be empty");
+                uname.focus();
+                return false;
+            }
+            if (uname.value.match(letters)) {
+                return true;
+            }
+            else {
+                alert('Name must have alphabet characters only');
+                uname.focus();
+                return false;
+            }
+        }
+
+        function ValidateEmail(email) {
+            var email_len = email.value.length;
+            if (email_len == 0) {
+                alert("Email should not be empty");
+                email.focus();
+                return false;
+            }
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (!email.value.match(mailformat)) {
+                alert("You have entered an invalid email address!");
+                email.focus();
+                return false;
+            }
+        }
+
+        function ValidateMessage(message) {
+            var mes_len = message.value.length;
+            if (mes_len == 0) {
+                alert("message should not be empty");
+                message.focus();
+                return false;
+            }
+            return true;
+        }
+
+    </script>
+
+    <nav class="navbar background h-nav-resp">
+        <div class="nav">
+            <input type="checkbox" id="nav-check">
+            <div class="nav-header">
+                <div class="logo">
+                    <img src="/img/logo_Land.jpg" alt="FoodSpotting">
+                </div>
+            </div>
+            <div class="nav-btn">
+                <label for="nav-check">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+
+            <div class="nav-links">
+                <a href="#Home">HOME</a>&ensp;&ensp;&ensp;&ensp;
+                <a href="#Explore">ABOUT</a>&ensp;&ensp;&ensp;
+                <a href="#Contactus">CONTACT US</a>&ensp;&ensp;&ensp;
+            </div>
+        </div>
+    </nav>
+</head>
+
+<body onload="document.registration.userid.focus();">
+
+    <section class="background firstsection" id="Home">
+        <div class="box-main">
+            <div class="firstHalf">
+                <p class="text-big">Welcome to Food Spotting</p>
+                <p class="text-small">
+                    Add Your own experience and Discover other's experiences too.
+                </p>
+            </div>
+            <div class="buttons">
+                <a href="http://localhost:3000/restaurants">
+                    <!-- <button class="btn">Login Now</button> -->
+                    <button class="btn">Explore Restaurants</button>
+                </a>
+            </div>
+            <div class="secondHalf">
+                <img src="/img/logo_Land.jpg" />
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="paras">
+            <p class="sectiontag text-big" id="Explore">Explore More Post More.</p>
+            <p class="sectiontagSubTag text-small">
+                Food is any substance consumed to provide nutritional support for an
+                organism. Food is usually of plant, animal or fungal origin, and
+                contains essential nutrients, such as carbohydrates, fats, proteins,
+                vitamins, or minerals. The substance is ingested by an organism and
+                assimilated by the organism's cells to provide energy, maintain life,
+                or stimulate growth. Different species of animals have different
+                feeding behaviors that satisfy the needs of their unique metabolisms,
+                often evolved to fill a specific ecological niche within specific
+                geographical contexts..
+            </p>
+        </div>
+        <div class="thumbnail">
+            <img src="https://source.unsplash.com/900x900/?meal" alt="thumbnail image" class="imgFuild" />
+        </div>
+    </section>
+    <section class="section section-left">
+        <div class="paras">
+            <p class="sectiontag text-big">Add Taste to your Life</p>
+            <p class="sectiontagSubTag text-small">
+                Diet food or dietetic food refers to any food or beverage whose recipe
+                is altered to reduce fat, carbohydrates, abhor/adhore sugar in order
+                to make it part of a weight loss program or diet. Such foods are
+                usually intended to assist in weight loss or a change in body type,
+                although bodybuilding supplements are designed to aid in gaining
+                weight or muscle. The process of making a diet version of a food
+                usually requires finding an acceptable low-food-energy substitute for
+                some high-food-energy ingredient.
+            </p>
+        </div>
+        <div class="thumbnail">
+            <img src="https://source.unsplash.com/900x900/?bar" alt="thumbnail image" class="imgFuild" />
+        </div>
+    </section>
+    <section class="section">
+        <div class="paras">
+            <p class="sectiontag text-big">Travel across and share</p>
+            <p class="sectiontagSubTag text-small">
+                The origin of the word "travel" is most likely lost to history. The
+                term "travel" may originate from the Old French word travail, which
+                means 'work'. According to the Merriam Webster dictionary, the
+                first known use of the word travel was in the 14th century. It also
+                states that the word comes from Middle English travailen, travelen
+                (which means to torment, labor, strive, journey) and earlier from Old
+                French travailler (which means to work strenuously, toil). In English
+                we still occasionally use the words "travail", which means struggle.
+            </p>
+        </div>
+        <div class="thumbnail">
+            <img src="https://source.unsplash.com/900x900/?Restaurants" alt="thumbnail image" class="imgFuild" />
+        </div>
+    </section>
+    <hr />
+    <section class="contact" id="Contactus">
+        <h2 class="text-center">Contact Us</h2>
+        <form name="contactUs" action="https://formspree.io/f/mrgjoobl" method="POST" onSubmit="formValidation();">
+            <div class="form">
+                <input class="form-input" type="text" name="name" id="name" placeholder="Enter Your Name" />
+                <!-- <input
+          class="form-input"
+          type="text"
+          name="phone"
+          id="phone"
+          placeholder="Enter Your Phone"
+        /> -->
+                <input class="form-input" type="email" name="email" id="email" placeholder="Enter Your email" />
+                <textarea name="contactUs" id="feedback-area" cols="30" rows="10"
+                    placeholder="Enter your Message here"></textarea>
+                <input type="submit" name="submit" value="Submit" class="btn btn-sm btn-dark" />
+                <!-- Submit Feedback</button> -->
+                <!-- <script>
+                    function formValidation() {
+                        var uname = document.registration.username;
+                        var uemail = document.registration.email;
+                        var message = document.registration.contactUs;
+                        if (allLetter(uname)) {
+                            if (ValidateEmail(uemail)) {
+                                if (ValidateMessage(message)) {
+                                }
+                            }
+                        }
+
+                        return false;
+                    }
+
+                    function allLetter(uname) {
+                        var letters = /^[A-Za-z]+$/;
+
+                        var name_len = uname.value.length;
+                        if (name_len == 0) {
+                            alert("Name should not be empty");
+                            uname.focus();
+                            return false;
+                        }
+                        if (uname.value.match(letters)) {
+                            return true;
+                        }
+                        else {
+                            alert('Name must have alphabet characters only');
+                            uname.focus();
+                            return false;
+                        }
+                    }
+
+                    function ValidateEmail(email) {
+                        var email_len = email.value.length;
+                        if (email_len == 0) {
+                            alert("Email should not be empty");
+                            email.focus();
+                            return false;
+                        }
+                        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                        if (!email.value.match(mailformat)) {
+                            alert("You have entered an invalid email address!");
+                            email.focus();
+                            return false;
+                        }
+                    }
+
+                    function ValidateMessage(message) {
+                        var mes_len = message.value.length;
+                        if (mes_len == 0) {
+                            alert("message should not be empty");
+                            message.focus();
+                            return false;
+                        }
+                        return true;
+                    }
+                </script> -->
+        </form>
+        </div>
+    </section>
+    <footer class="background">
+        <p class="text-footer">
+            Copyright: &copy; 2022 www.thefoodtspotting.com - All rights reserved
+        </p>
+    </footer>
+
+</body>
